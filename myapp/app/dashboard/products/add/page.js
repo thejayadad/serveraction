@@ -1,14 +1,8 @@
 import { addProduct } from '@/lib/actions'
 import Link from 'next/link'
 import React from 'react'
-import ImagePreview from '@/components/Dashboard/ImagePreview/ImagePreview'
 
-const AddProduct = () => {
-    const handleImagePreview = (e) => {
-        const imgPreview = document.getElementById('img-preview');
-        imgPreview.src = e.target.value;
-      };
-    
+const AddProduct = () => {    
   return (
     <section className="min-h-screen border p-6 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
        <div className='bg-white max-w-screen-md mx-auto p-8 rounded-lg shadow-lg'>
@@ -23,29 +17,29 @@ const AddProduct = () => {
             rows={3}
             className="mb-4 p-2 border-b border-gray-300 focus:outline-none"
             type='text' placeholder='Description' name='desc' required />
-
             <input
              className="mb-4 p-2 border-b border-gray-300 focus:outline-none"
                 type='number'
                 placeholder='Price'
+                name='price'
 
             />
             <input
              className="mb-4 p-2 border-b border-gray-300 focus:outline-none"
                 type='number'
                 placeholder='Stock'
+                name='stock'
 
               />
             <input
              className="mb-4 p-2 border-b border-gray-300 focus:outline-none"
                 type='text'
                 placeholder='Image'
-       
+                name='img'     
 
             />
-                <button type='submit'>Submit</button>
+            <button>Submit</button>
             </form>
-            <ImagePreview imageUrl={addProduct.img} /> 
             <div className='flex justify-between'>
         <Link
         className='mt-12'

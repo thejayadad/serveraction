@@ -7,7 +7,7 @@ import Link from 'next/link'
 const ProductsPage = async  () => {
     const products = await fetchProducts()
   return (
-    <section className="mt-8  max-w-screen-lg mx-auto min-h-screen border p-6">
+    <section className="mt-8  max-w-screen-lg mx-auto min-h-screen border-l border-r p-6">
         <div className='flex flex-col'>
         <TopNav />
         <table className='mt-6'>

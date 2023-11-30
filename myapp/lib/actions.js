@@ -21,12 +21,39 @@ export const addProduct = async (formData) => {
           });
       
           await newProduct.save();
-        } catch (err) {
-          console.log(err);
+        } catch (error) {
+          console.log(error);
           throw new Error("Failed to create product!");
         
     }
     revalidatePath("/dashboard/products");
     redirect("/dashboard/products");
+
+}
+
+export const updateProduct = async (formData) => {
+    const { title, desc, price, stock, img } =
+    Object.fromEntries(formData);
+    try {
+        connectToDB()
+        const updateFields = {
+            title,
+            desc,
+            price,
+            stock,
+            img,
+          };
+          Object.keys(updateFields).forEach(
+            (key) =>
+              (updateFields[key] === "" || undefined) && delete updateFields[key]
+          );
+      
+          await Product.findByIdAndUpdate(id, updateFields);
+    } catch (error) {
+        console.log(error);
+        throw new Error("Failed to update product!");        
+    }
+    revalidatePath("/dashboard/products");
+  redirect("/dashboard/products");
 
 }
