@@ -12,3 +12,15 @@ export const fetchProducts = async ()=> {
         
     }
 }
+
+export const fetchProduct = async (id)=> {
+    connectToDB()
+    try {
+        const product = await Product.findById(id)
+        return product
+    } catch (error) {
+        console.log(err);
+        throw new Error("Failed to fetch product!");
+    }
+
+}

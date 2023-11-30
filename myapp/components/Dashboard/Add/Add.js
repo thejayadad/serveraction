@@ -1,9 +1,10 @@
 'use client'
+import Link from 'next/link'
 import React from 'react'
 
 const Add = () => {
   return (
-    <div>Add</div>
+    <Link href={'/dashboard/products/add'}>Add</Link>
   )
 }
 
