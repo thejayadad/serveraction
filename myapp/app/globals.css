@@ -9,11 +9,17 @@ body{
   font-size: 16px;
 }
 
-/* @layer base{
-  Link{
-    @apply text-black
+@layer base{
+  table{
+    @apply min-w-full divide-y divide-gray-200
   }
-} */
+  td{
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer
+  }
+  table{
+    @apply bg-transparent
+  }
+}
 h1{
   font-size: 80px;
 }

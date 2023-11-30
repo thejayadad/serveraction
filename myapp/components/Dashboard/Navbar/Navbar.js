@@ -19,9 +19,9 @@ const Navbar = () => {
     <header className='px-4 py-12'>
         <div className='flex justify-center gap-6 items-center bg-purple-200'>
             <Link href={'/dashboard'}>
-            <span className="text-3xl font-bold text-blue-500 hover:text-blue-700 transition duration-300">
+            <h2 className="text-3xl font-bold text-blue-500 hover:text-blue-700 transition duration-300">
             WalletWorld Dashboard
-          </span>
+          </h2>
             </Link>
             {navLinks.map((link) => (
           <Link
